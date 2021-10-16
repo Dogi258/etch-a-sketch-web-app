@@ -1,4 +1,39 @@
+/* Basic Styling */
+
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #e0e9eb;
+  height: 100vh;
+}
+
+header {
+  padding: 2em;
+  font-size: 2em;
+  border-bottom: 3px dotted black;
+}
+
+main {
+  flex: 1;
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2em 0;
+  padding: 1rem 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  width: 10rem;
+}
+
+.container {
+  
 }
