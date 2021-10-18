@@ -10,6 +10,12 @@ function createGrid() {
     // Create grid cell and add grid-item class
     const cell = document.createElement("div");
     cell.classList.add("grid-item");
+
+    // Changes color of div when mouse is over
+    cell.addEventListener("mouseenter", function () {
+      cell.classList.add("hovered");
+    });
+
     gridContainer.appendChild(cell);
   }
 }
