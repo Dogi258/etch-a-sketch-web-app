@@ -8,8 +8,8 @@
 }
 
 :root {
-  --rows: 16;
-  --columns: 16;
+  --row: 16;
+  --col: 16;
 }
 
 body {
@@ -40,7 +40,7 @@ button {
 }
 
 .grid-container {
-  border: 2px solid gray;
+  border: 1px solid gray;
   width: 50vh;
   height: 50vh;
   margin: 0 auto;
@@ -48,9 +48,9 @@ button {
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-template-rows: repeat(var(--rows), 1fr);
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-gap: 2px;
+  grid-template-rows: repeat(var(--row), 1fr);
+  grid-template-columns: repeat(var(--col), 1fr);
+  grid-gap: 1px;
 }
 
 .grid-item {
