@@ -7,6 +7,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+:root {
+  --rows: 16;
+  --columns: 16;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -34,6 +39,18 @@ button {
   width: 10rem;
 }
 
-.container {
-  
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-rows: repeat(var(--rows), 1em);
+  grid-template-columns: repeat(var(--columns), 1em);
+}
+
+.grid-item {
+  background-color: white;
+}
+
+.grid-item:hover {
+  background-color: aqua;
 }
