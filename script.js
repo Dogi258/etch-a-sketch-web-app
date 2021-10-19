@@ -1,21 +1,10 @@
 // Get root document element
 let root = document.documentElement;
-
 // Get clear button
 const button = document.querySelector("button");
 
-function clearGrid() {
-  // Remove grid container
-  let grid = document.querySelector(".grid-container");
-  grid.remove();
-
-  // Add new grid container
-  let newGridContainer = document.createElement("div");
-  newGridContainer.classList.add("grid-container");
-
-  let main = document.querySelector("main");
-  main.appendChild(newGridContainer);
-  // Ask for input for the next grid
+// Ask for input for the next grid; Returns the grid size
+function promptGridSize() {
   let gridSize = window.prompt(
     "How many squares per side will the new grid have? (1-100)"
   );
@@ -28,8 +17,13 @@ function clearGrid() {
     gridSize = window.prompt("Invalid Input (Try 1-100)");
   }
 
-  // Create new grid with input
-  createGrid(gridSize);
+  return gridSize;
+}
+
+function clearGrid() {
+  // Clear grid-container elements
+  let grid = document.querySelector(".grid-container");
+  grid.innerHTML = "";
 }
 
 /* Function that creates the etch-a-sketch grid */
@@ -60,4 +54,7 @@ function createGrid(gridRows = 16) {
 createGrid();
 
 // Event listener for clicking clear grid button
-button.addEventListener("click", clearGrid);
+button.addEventListener("click", function () {
+  clearGrid();
+  createGrid(promptGridSize());
+});
